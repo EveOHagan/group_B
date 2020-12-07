@@ -1,0 +1,54 @@
+<html> 
+
+<head> 
+  <link rel="stylesheet" type="text/css" href="/Users/eveohagan/Group1/css/mainstyle.css">
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+</head>
+
+<h1> Rank the Icons from Most to Least Beautiful</h1>
+
+  <h3> Drag and Drop the icons into position </h4>
+
+    <hr>
+
+  <body class="body" onload="startRank()"> 
+    <div id="rankedPicture" class="imagesRank" style="width: 100%;">
+  
+
+        <img src="images/images/start_rank.png" data-id="1" id = "drag1" width="200px" height="100px">
+
+        <img src="images/images/start_rank.png" data-id="2" id = "drag2" width="200px" height="100px"> 
+
+        <img src="images/images/start_rank.png" data-id="3" id = "drag3" width="200px" height="100px"> 
+
+        <img src="images/images/start_rank.png" data-id="4" id = "drag4" width="200px" height="100px"> 
+  
+    </div>
+
+    <br>
+    
+    <br>
+    
+    <hr>
+    <div class="buttonRank"> 
+    <button type="button" onclick="storeRank()" style="height:50px;width:100px;font-size:medium;"> Submit</button>
+  </div>
+
+  <br>
+
+  <div class="counter" id=counter>
+  </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+      <script type="text/javascript" src="/Users/eveohagan/Group1/js/main.js"></script>
+
+</body>
+</html>             
+
+
+  

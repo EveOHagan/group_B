@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> App Icons </title>
+    <link rel="stylesheet" type="text/css" href="/Users/eveohagan/Group1/css/mainstyle.css">
+    <script type="text/javascript" src="/Users/eveohagan/Group1/js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+
+</head>
+
+
+
+<body class="body" onload=startRate()>
+    <div>
+        <div>
+            <hr>
+            <div class=topbar>
+                <h1> Is this app icon beautiful? </h1>
+            </div>
+            <hr>
+
+        
+            <br>
+            <br>
+            <div class=imageRate> 
+            <img src="/Users/eveohagan/rate/images/begin.png" id="mainImage" width="300px" height="400px"/>
+            <br>
+            </div>
+            <hr>
+
+            <br>
+            <br>
+            <div class=answerRate> 
+            <div id=answerRate>
+                <label> Strongly Agree </label>
+                <label><input type="radio" onclick="storeRate(this.id)" name="answer" value="1" id="1" required><span>1</span></label>
+                <label><input type="radio" onclick="storeRate(this.id)" name="answer" value="2" id="2" required><span>2</span></label>
+                <label><input type="radio" onclick="storeRate(this.id)" name="answer" value="3" id="3" required><span>3</span></label>
+                <label><input type="radio" onclick="storeRate(this.id)" name="answer" value="4" id="4" required><span>4</span></label>
+                <label><input type="radio" onclick="storeRate(this.id)" name="answer" value="5" id="5" required><span>5</span></label>
+                <label> Strongly disagree</label>
+
+            <br>
+            <br>
+                <hr>
+            </div>
+
+            <div class=counter id=counter>
+            </div>
+
+            </div>
+</body>

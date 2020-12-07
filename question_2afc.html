@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> App Icons? </title>
+    <link rel="stylesheet" type="text/css" href="/Users/eveohagan/Group1/css/mainstyle.css">
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+</head>
+
+<body class=body onload="start2AFC()">
+    <div>
+        <div>
+            <hr>
+            <div class=topbar>
+                <h1> Which app icon is more beautiful?</h1>
+            </div>
+            <hr>
+
+            <div class=imageContainer>
+                <div class=image>
+                    <img onclick="store2AFC(this.id)" id="image" alt="Experimental Image" width="400px" height="200px">
+                </div>
+
+                <div class=image>
+                    <img onclick="store2AFC(this.id)" type="image" id="image2" alt="Experiment Image" width="400px" height="200px">
+                </div>
+            </div>
+        </div>
+
+        <hr>
+            <div class=counter id=counter>
+            </div>
+
+        </div> 
+
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+        <script type="text/javascript" src="/Users/eveohagan/Group1/js/main.js"></script>
+</body>
+</html>

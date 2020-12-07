@@ -1,0 +1,67 @@
+<html>
+    <header>
+
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
+        <link rel="stylesheet" type="text/css" href="/Users/eveohagan/Website/css/mainstyle.css">
+        <script type="text/javascript" src="/Users/eveohagan/Website/js/main.js"></script>
+
+
+    </header>
+<body class="body">
+
+        <div id="postExperiment" style="text-align: center;"> 
+        <h1> Postexperiment Questionnaire </h1>
+        <hr>
+
+        <h3> Age </h3>
+        <select name="age" id="age">
+            <option value="18-24"> 18-24 </option>
+            <option value="25-34"> 25-34 </option>
+            <option value="35-49"> 35-49 </option>
+            <option value="50-64"> 50-64 </option>
+            <option value="65+"> 65 or older</option>
+        </select>
+        <hr>
+
+
+        <h3> What is your gender? </h3>
+        <select name = "gender" id="gender"> 
+        <option value="female"> Female</option>
+        <option value="male"> Male</option>
+        <option value="neither"> Prefer not to say</option>
+        </select>
+        <hr>
+
+
+        <h3>What is your occupation? </h3> 
+        <textarea name="occupation" id="occupation" cols="50" rows="3"> </textarea>
+        <hr> 
+
+        <h3> What is your main subject which you have studied? </h3> 
+        <textarea name="studied" id="studied" cols="50" rows="3"></textarea>
+        <hr>
+
+
+        <h3> Have you had experience with any of the question types throughout this experiment? If so, when? </h3>
+        <textarea name="experience" id="experience" cols="80" rows="5"></textarea>
+        <hr>
+
+
+        <div id="comments">
+        <h3> Do you have any other comments?</h3>
+        <textarea name="comment" id="comment" cols="80" rows="5"></textarea>
+        <hr>
+        </div>
+
+        <button type="button" onclick="submit()"> Submit</button>
+
+    </div>
+
+    
+    </body>
+</html>

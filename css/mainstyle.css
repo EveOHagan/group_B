@@ -1,0 +1,251 @@
+.topbar {    
+    color: black;
+    font-size:1vw;
+    height: 50px;
+    width: 100%;     
+    line-height: 50px;
+    text-align: center;    
+    vertical-align: middle;
+    font-family: 'Arial';    
+}
+
+.imageContainer{
+    width: 140%;
+    height: fit-content;
+    align-items: center;
+}
+
+.body {
+    background-color: beige;
+    height: 100%;
+    width: 100%;
+}
+
+
+.image {
+    display: inline-block;
+    height: fit-content;
+    width: 48%;
+    margin-left: 15px;
+    text-align: center;
+    vertical-align: middle;      
+}
+
+
+.counter{
+    height: 25px;
+    width: 100%;
+    margin:0 auto;
+    padding: 0.5%;
+    align-items: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size:2vw;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* font-size: 25px; */
+    color: black;
+}
+
+
+.button {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;    
+    font-size: 25px;
+}
+
+/*2AFC Website */
+
+#image, #image2{
+
+    width: 100%;
+    height: 50%;
+    max-height: 200px;
+    max-width: 400px;
+    padding:1px;
+    border:2px solid #000000;      
+}
+
+
+
+.radio-label {
+    display: inline-block;
+     vertical-align: top;
+     margin-right: 3%;
+     font-size: 25px;
+ }
+
+
+.button{
+    margin-top: 5px;
+}
+
+.image{
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+
+}
+
+.image2 {
+    float: right;
+    width: 33.33%;
+    padding: 5px;
+}
+
+.imageContainer::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+
+
+.button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+h1{ 
+text-align:center;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+h2, h3, p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+/* Rate Website */
+
+.imageRate{
+
+    height: fit-content;
+    width: 48%;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: middle; 
+
+
+}
+
+#mainImage{
+    width: 100%;
+    height: 50%;
+    max-height: 200px;
+    max-width: 180px;
+    padding:1px;
+    border:2px solid #000000;  
+    align-items: center;   
+    left: 50%;
+    top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto;
+    
+}
+
+
+.radio-label {
+    height: 25px;
+    width: 100%;
+    margin:0 auto;
+    padding: 0.5%;
+    align-items: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size:2vw;
+    /* font-size: 25px; */
+    color: black;
+    
+ }
+
+ .answerRate{
+    height: 25px;
+    width: 100%;
+    margin:0 auto;
+    padding: 0.2%;
+    align-items: center;
+    vertical-align: middle;
+    border-radius: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size:1.5vw;
+    /* font-size: 25px; */
+    color: black;
+}
+
+
+/*Rank Website */
+
+#drag1 {
+    border: 2px solid black;
+    padding: 4px;
+    margin: 20px;
+}
+
+#drag2 {
+    border: 2px solid black;
+    padding: 4px;
+    margin: 20px;
+}
+
+#drag3, #drag4 {
+    border: 2px solid black;
+    padding: 4px;
+    margin: 20px;
+}
+
+
+
+.buttonRank {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.button{
+    font-size: 20px;
+}
+
+
+.imagesRank{
+float: right;
+}
+
+#complete img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#ethics1 img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#ethics2 img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
