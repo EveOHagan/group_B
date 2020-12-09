@@ -183,7 +183,7 @@ function send2AFC() {
 function startRate(){
 
     // 4 practice images
-    var practiceArray = ["images/images/practice/practice1.jpg", "images/images/practice/practice2.jpg", "images/images/practice/practice4.jpg", "/images/images/practice/practice7.jpg"]
+    var practiceArray = ["images/images/practice/practice1.jpg", "images/images/practice/practice2.jpg", "images/images/practice/practice4.jpg", "images/images/practice/practice7.jpg"]
     
     var imageArray = ["images/images/icon1.jpg", "images/images/icon2.jpg", "images/images/icon3.jpg", "images/images/icon4.jpg", "images/images/icon5.jpg", "images/images/icon6.jpg", "images/images/icon7.jpg",
     "images/images/icon8.jpg", "images/images/icon9.jpg", "images/images/icon10.jpg", "images/images/icon11.jpg","images/images/icon12.jpg", "images/images/icon13.jpg", 
