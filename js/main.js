@@ -64,12 +64,12 @@ var counter = 0;
 window.sessionStorage.setItem("counter", counter);
 
 
-total = (JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length)
-count = total - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
-window.sessionStorage.setItem("total", total)
+totalIcons = (JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length)
+count = totalIcons - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
+window.sessionStorage.setItem("totalIcons", totalIcons)
 
 
-document.getElementById("counter").innerHTML = "Trial " + count + " of " + total
+document.getElementById("counter").innerHTML = "Trial " + count + " of " + totalIcons
 random2AFC();
 
 }
@@ -87,7 +87,6 @@ function random2AFC() {
 
     counter = counter + 1
     window.sessionStorage.setItem("counter", counter)
-
 
 
 
@@ -120,9 +119,9 @@ function random2AFC() {
 
 function store2AFC(id) {
     
-    total = window.sessionStorage.getItem("total")
-    count = total - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
-    document.getElementById("counter").innerHTML = "Trial " + count + " of " + total;
+    totalIcons = window.sessionStorage.getItem("totalIcons")
+    count = totalIcons - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
+    document.getElementById("counter").innerHTML = "Trial " + count + " of " + totalIcons;
 
     var chosen = JSON.parse(window.sessionStorage.getItem("chosen"))
 
@@ -223,9 +222,9 @@ function storeRate(id){
         var dict = JSON.parse(window.sessionStorage.getItem("selected"));
         var img = document.getElementById("mainImage");
         var img_file = img.src.slice(-9);
-        var radio = document.getElementsByName("answer");
+        var radio = document.getElementsByName("rated");
         var rate = id;
-        var chosen = [rate, img_file]
+        var chosen = [img_file, rate]
         console.log(chosen)
     
          for (var i = 0; i < radio.length; i++)
@@ -248,23 +247,24 @@ function changeRateImage(){
         var images = JSON.parse(window.sessionStorage.getItem("images"))
         var practice = JSON.parse(window.sessionStorage.getItem("practice"))
         var counter = JSON.parse(window.sessionStorage.getItem("counter"))
+        var img = document.getElementById("mainImage");
         counter = counter + 1
         window.sessionStorage.setItem("counter", counter)
     
         if (practice.length > 0 ){
-            document.getElementById("mainImage").src = practice[0]
+            img.src = practice[0]
             practice.splice(0, 1)
             window.sessionStorage.setItem("practice", JSON.stringify(practice))
         } else {
             if (counter % 12 == 0 ) {
-                document.getElementById("mainImage").src = ("images/images/break_rate.png")
+                img.src = ("images/images/rate_break.png")
         } else {
             if (images.length == 0) {
                 sendRate();
             }
             var rnd =  Math.floor(Math.random() * images.length);
             counter = counter + 1;
-            document.getElementById("mainImage").src = images[rnd];
+            img.src = images[rnd];
             images.splice(rnd, 1)
             window.sessionStorage.setItem("images", JSON.stringify(images))
         }
