@@ -39,7 +39,7 @@ var counter = 0;
 window.sessionStorage.setItem("counter", counter);
 
 count = 1;
-document.getElementById("counter").innerHTML = "You are on image " + count + " of 42"
+document.getElementById("counter").innerHTML = "You are on image " + count + " of 45"
 random2AFC();
 
 
@@ -85,7 +85,7 @@ function random2AFC() {
     
     counter += 1
     practiceImagesSort = practiceImages.sort(() => Math.random() - 0.5);
-    document.getElementById("counter").innerHTML = "Trial " + count + " of 42";
+    document.getElementById("counter").innerHTML = "Trial " + count + " of 45";
     
     var a = 0;
     var b = 1;
