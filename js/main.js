@@ -1,180 +1,172 @@
 function nextPage(){
+    window.location.href =("information.html")
+}
+
+function startExperiment(){
     window.location.href =("question_2afc.html")
 }
 
 // 2AFC
 function start2AFC() {
+    var answers = {};
+    window.sessionStorage.setItem("answers", JSON.stringify(answers))
 
-        var practice = new Array();
+    var myImages = new Array();
+    var testImages = new Array();
 
-        practice[0] = ["images/images/practice/practice1.jpg","images/images/practice/practice2.jpg" ];
-        practice[1] = ["images/images/practice/practice2.jpg", "images/images/practice/practice4.jpg"];
+    testImages = ["images/images/practice/practice1.jpg","images/images/practice/practice2.jpg","images/images/practice/practice3.jpg", "images/images/practice/practice4.jpg"];
 
-        var images2AFC = new Array();
-        images2AFC[0] = ["images/images/icon1.jpg", "images/images/icon40.jpg"]
-        images2AFC[1] = ["images/images/icon2.jpg", "images/images/icon39.jpg"]
-        images2AFC[2] = ["images/images/icon3.jpg", "images/images/icon38.jpg"]
-        images2AFC[3] = ["images/images/icon4.jpg", "images/images/icon37.jpg"]
-        images2AFC[4] = ["images/images/icon5.jpg", "images/images/icon36.jpg"]
-        images2AFC[5] = ["images/images/icon6.jpg", "images/images/icon35.jpg"]
-        images2AFC[6] = ["images/images/icon7.jpg", "images/images/icon34.jpg"]
-        images2AFC[7] = ["images/images/icon8.jpg", "images/images/icon33.jpg"]
-        images2AFC[8] = ["images/images/icon9.jpg", "images/images/icon32.jpg"]
-        images2AFC[9] = ["images/images/icon10.jpg", "images/images/icon31.jpg"]
-        images2AFC[10] = ["images/images/icon11.jpg", "images/images/icon30.jpg"]
-        images2AFC[11] = ["images/images/icon12.jpg", "images/images/icon29.jpg"]
-        images2AFC[12] = ["images/images/icon13.jpg", "images/images/icon28.jpg"]
-        images2AFC[13] = ["images/images/icon14.jpg", "images/images/icon27.jpg"]
-        images2AFC[14] = ["images/images/icon15.jpg", "images/images/icon26.jpg"]
-        images2AFC[15] = ["images/images/icon16.jpg", "images/images/icon25.jpg"]
-        images2AFC[16] = ["images/images/icon17.jpg", "images/images/icon24.jpg"]
-        images2AFC[17] = ["images/images/icon18.jpg", "images/images/icon23.jpg"]
-        images2AFC[18] = ["images/images/icon19.jpg", "images/images/icon22.jpg"]
-        images2AFC[19] = ["images/images/icon20.jpg", "images/images/icon21.jpg"]
-        images2AFC[20] = ["images/images/icon21.jpg", "images/images/icon20.jpg"]
-        images2AFC[21] = ["images/images/icon22.jpg", "images/images/icon19.jpg"]
-        images2AFC[22] = ["images/images/icon23.jpg", "images/images/icon18.jpg"]
-        images2AFC[23] = ["images/images/icon24.jpg", "images/images/icon17.jpg"]
-        images2AFC[24] = ["images/images/icon25.jpg", "images/images/icon16.jpg"]
-        images2AFC[25] = ["images/images/icon26.jpg", "images/images/icon15.jpg"]
-        images2AFC[26] = ["images/images/icon27.jpg", "images/images/icon14.jpg"]
-        images2AFC[27] = ["images/images/icon28.jpg", "images/images/icon13.jpg"]
-        images2AFC[28] = ["images/images/icon29.jpg", "images/images/icon12.jpg"]
-        images2AFC[29] = ["images/images/icon30.jpg", "images/images/icon11.jpg"]
-        images2AFC[30] = ["images/images/icon31.jpg", "images/images/icon10.jpg"]
-        images2AFC[31] = ["images/images/icon32.jpg", "images/images/icon9.jpg"]
-        images2AFC[32] = ["images/images/icon33.jpg", "images/images/icon8.jpg"]
-        images2AFC[33] = ["images/images/icon34.jpg", "images/images/icon7.jpg"]
-        images2AFC[34] = ["images/images/icon35.jpg", "images/images/icon6.jpg"]
-        images2AFC[35] = ["images/images/icon36.jpg", "images/images/icon5.jpg"]
-        images2AFC[36] = ["images/images/icon37.jpg", "images/images/icon4.jpg"]
-        images2AFC[37] = ["images/images/icon38.jpg", "images/images/icon3.jpg"]
-        images2AFC[38] = ["images/images/icon39.jpg", "images/images/icon2.jpg"]
-        images2AFC[39] = ["images/images/icon40.jpg", "images/images/icon1.jpg"]
+    var myImages = ["images/images/icon1.jpg", "images/images/icon2.jpg", "images/images/icon3.jpg", "images/images/icon4.jpg", "images/images/icon5.jpg", "images/images/icon6.jpg", "images/images/icon7.jpg",
+    "images/images/icon8.jpg", "images/images/icon9.jpg", "images/images/icon10.jpg", "images/images/icon11.jpg","images/images/icon12.jpg", "images/images/icon13.jpg", 
+    "images/images/icon14.jpg", "images/images/icon15.jpg","images/images/icon16.jpg", "images/images/icon17.jpg", "images/images/icon18.jpg", "images/images/icon19.jpg",
+    "images/images/icon20.jpg", "images/images/icon21.jpg", "images/images/icon22.jpg", "images/images/icon23.jpg","images/images/icon24.jpg", "images/images/icon25.jpg", 
+    "images/images/icon26.jpg", "images/images/icon27.jpg", "images/images/icon28.jpg", "images/images/icon29.jpg", "images/images/icon30.jpg", "images/images/icon31.jpg", "images/images/icon32.jpg", "images/images/icon33.jpg", "images/images/icon34.jpg",
+    "images/images/icon35.jpg", "images/images/icon36.jpg", "images/images/icon37.jpg", "images/images/icon38.jpg", "images/images/icon39.jpg", "images/images/icon40.jpg"]
 
+    var secondImages = ["images/images/icon1.jpg", "images/images/icon2.jpg", "images/images/icon3.jpg", "images/images/icon4.jpg", "images/images/icon5.jpg", "images/images/icon6.jpg", "images/images/icon7.jpg",
+    "images/images/icon8.jpg", "images/images/icon9.jpg", "images/images/icon10.jpg", "images/images/icon11.jpg","images/images/icon12.jpg", "images/images/icon13.jpg", 
+    "images/images/icon14.jpg", "images/images/icon15.jpg","images/images/icon16.jpg", "images/images/icon17.jpg", "images/images/icon18.jpg", "images/images/icon19.jpg",
+    "images/images/icon20.jpg", "images/images/icon21.jpg", "images/images/icon22.jpg", "images/images/icon23.jpg","images/images/icon24.jpg", "images/images/icon25.jpg", 
+    "images/images/icon26.jpg", "images/images/icon27.jpg", "images/images/icon28.jpg", "images/images/icon29.jpg", "images/images/icon30.jpg", "images/images/icon31.jpg", "images/images/icon32.jpg", "images/images/icon33.jpg", "images/images/icon34.jpg",
+    "images/images/icon35.jpg", "images/images/icon36.jpg", "images/images/icon37.jpg", "images/images/icon38.jpg", "images/images/icon39.jpg", "images/images/icon40.jpg"]
 
-window.sessionStorage.setItem("practiceImages", JSON.stringify(practice))
-window.sessionStorage.setItem("images", JSON.stringify(images2AFC))
-
-var chosen = {};
-window.sessionStorage.setItem("chosen", JSON.stringify(chosen))
+    window.sessionStorage.setItem("practiceImages", JSON.stringify(testImages))
+    window.sessionStorage.setItem("images", JSON.stringify(myImages))
+    window.sessionStorage.setItem("images_2", JSON.stringify(secondImages))
 
 
 var counter = 0;
 window.sessionStorage.setItem("counter", counter);
 
-
-totalIcons = (JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length)
-count = totalIcons - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
-window.sessionStorage.setItem("totalIcons", totalIcons)
-
-
-document.getElementById("counter").innerHTML = "Trial " + count + " of " + totalIcons
+count = 1;
+document.getElementById("counter").innerHTML = "You are on image " + count + " of 42"
 random2AFC();
+
 
 }
 
 
+// writes user answers to database then loads page for feedback
+function send2AFC() {
 
+var answers = JSON.parse(window.sessionStorage.getItem("answers"));
 
+var firebaseConfig = {
+    apiKey: "AIzaSyDGYxKp5jYYN25IWWexRI4H7lrcjgJ7rKw",
+    authDomain: "groupb-8cc7c.firebaseapp.com",
+    projectId: "groupb-8cc7c",
+    storageBucket: "groupb-8cc7c.appspot.com",
+    messagingSenderId: "148996579075",
+    appId: "1:148996579075:web:f34e8000366b9c102d5336",
+    measurementId: "G-KJEQ8D0T53"
+  };;
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+db.collection("2afc").doc().set(answers)
+
+    .then(function () {
+        window.location.href =("rank.html")
+    })
+    .catch(function (error) {
+        console.error("Error writing document: ", error);
+    });
+}
+
+// picks random image from array of image files to be displayed
 function random2AFC() {
     var practiceImages = JSON.parse(window.sessionStorage.getItem("practiceImages"));
     var counter = JSON.parse(window.sessionStorage.getItem("counter"))
     var image = document.getElementById("image");
-    var image2 = document.getElementById("image2")
     var images = JSON.parse(window.sessionStorage.getItem("images"));
+    var images_2 = JSON.parse(window.sessionStorage.getItem("images_2"))
     var rnd = Math.floor(Math.random() * images.length);
-
-    counter = counter + 1
-    window.sessionStorage.setItem("counter", counter)
-
-
-
+    var rnd_2 = Math.floor(Math.random() * images_2.length);
+    
+    counter += 1
+    practiceImagesSort = practiceImages.sort(() => Math.random() - 0.5);
+    document.getElementById("counter").innerHTML = "Trial " + count + " of 42";
+    
+    var a = 0;
+    var b = 1;
+    
+    // iterate through practice array 
     if (practiceImages.length > 0) {
-        image.src = practiceImages[0][0];
-        image2.src = practiceImages[0][1];
-        practiceImages.splice(0, 1);
+        image.src = practiceImagesSort[a];
+        image2.src = practiceImagesSort[b];
+        practiceImagesSort.splice(0, 2);
+        count = count + 1;
         window.sessionStorage.setItem("practiceImages", JSON.stringify(practiceImages));
-
+        
     } else {
-        if (counter % 12 == 0) {
+        // after every 13 images, display break image not including practice
+        if (count % 13 == 0) {
             image.src = "images/images/break_2afc.png"
-            image2.src = "images/images/break_2afc.png"
+            image2.src = "images/images/break_2afc2.png"
+            count = count  + 1
         } else { 
-       if (images.length == 0) { 
+        // once every image has been displayed from both arrays, send to the database
+       if (images.length == 0 && images_2.length == 0) { 
                 send2AFC();
+       } else {
+    
+            // if icon1 and icon2 are not the same
+            // do not display duplicate, and generate new comparison
+            if ((images[rnd] != images_2[rnd_2])) {
+                image.src = images[rnd]
+                image2.src = images_2[rnd_2];
+                count = count + 1
+                console.log("not duplicate")
+            } else { 
+    
+            // if icon 1 and icon2 are not the same, then continue
+            var random1 = Math.floor(Math.random() * images.length);
+            var random2 = Math.floor(Math.random() * images_2.length);
+            image.src = images[random1]
+            console.log("found duplicate")
+            image2.src = images_2[random2];
+            rnd = random1;
+            rnd_2 = random2;
+            count = count + 1;
             }
-            counter = counter + 1
-            image.src = images[rnd][0];
-            image2.src = images[rnd][1];
-
+        }
             images.splice(rnd, 1);
+            images_2.splice(rnd_2, 1)
             window.sessionStorage.setItem("images", JSON.stringify(images))
+            window.sessionStorage.setItem("images_2", JSON.stringify(images_2))
         }
     }
-}
-
-
-
-
-function store2AFC(id) {
-    
-    totalIcons = window.sessionStorage.getItem("totalIcons")
-    count = totalIcons - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practiceImages")).length) - 1);
-    document.getElementById("counter").innerHTML = "Trial " + count + " of " + totalIcons;
-
-    var chosen = JSON.parse(window.sessionStorage.getItem("chosen"))
-
-
-    var img = document.getElementById("image");
-    var img_file = img.src.slice(-9);
-    var img2 = document.getElementById("image2");
-    var img_file2 = img2.src.slice(-9);
-
-    var selected = id;
-    var displayed = [img_file, img_file2]
-
-    if (selected == "image") {
-        chosen[displayed] = [img_file]
-    } else {
-        chosen[displayed] = [img_file2]
     }
-
-    console.log(chosen)
-    window.sessionStorage.setItem("chosen", JSON.stringify(chosen));
-
+    
+    
+    // stores answer selected from radio buttons
+    function store2AFC(id) {
+    
+    var answers = JSON.parse(window.sessionStorage.getItem("answers"))
+    var img = document.getElementById("image");
+    var img2 = document.getElementById("image2");
+    
+    var img_file = img.src.slice(-9);
+    var img_file2 = img2.src.slice(-9);
+    
+    
+    var selected = id;
+    console.log(selected);
+    var question = [img_file, img_file2]
+    
+        if (selected == "image") {
+            answers[question] = [img_file]
+        } else {
+            answers[question] = [img_file2]
+        }
+    
+        console.log(answers)
+        window.sessionStorage.setItem("answers", JSON.stringify(answers));
+    
+    
     random2AFC();
-}
-
-
-function send2AFC() {
-
-    var chosen = JSON.parse(window.sessionStorage.getItem("chosen"));
-
-    var firebaseConfig = {
-        apiKey: "AIzaSyBbRvtLhaChvpbpdMqCjwQPkTtwFPXbtTM",
-        authDomain: "dissertation-questionnai-74042.firebaseapp.com",
-        databaseURL: "https://dissertation-questionnai-74042.firebaseio.com",
-        projectId: "dissertation-questionnai-74042",
-        storageBucket: "dissertation-questionnai-74042.appspot.com",
-        messagingSenderId: "991390542938",
-        appId: "1:991390542938:web:8a74ddf23e54b2b3e7bc63",
-        measurementId: "G-YX1FG29CT9"
-      };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    db.collection("2afc").doc().set(chosen)
-
-        .then(function () {
-            window.location.href =("rate.html")
-        })
-        .catch(function (error) {
-            console.error("Error writing document: ", error);
-        });
-}
-
-
+    }
+    
 
 
 
@@ -196,8 +188,6 @@ function startRate(){
     window.sessionStorage.setItem("selected", JSON.stringify(selected));
     window.sessionStorage.setItem("images", JSON.stringify(imageArray));
     window.sessionStorage.setItem("practice", JSON.stringify(practiceArray));
-    
-    
     
     var counter = 0;
     window.sessionStorage.setItem("counter", counter);
@@ -256,8 +246,8 @@ function changeRateImage(){
             practice.splice(0, 1)
             window.sessionStorage.setItem("practice", JSON.stringify(practice))
         } else {
-            if (counter % 12 == 0 ) {
-                img.src = ("images/images/rate_break.png")
+            if (counter % 15 == 0 ) {
+                img.src = ("images/images/break_rate.png")
         } else {
             if (images.length == 0) {
                 sendRate();
@@ -277,14 +267,13 @@ function sendRate() {
         var selected = JSON.parse(window.sessionStorage.getItem("selected"));
     
         var firebaseConfig = {
-            apiKey: "AIzaSyBbRvtLhaChvpbpdMqCjwQPkTtwFPXbtTM",
-            authDomain: "dissertation-questionnai-74042.firebaseapp.com",
-            databaseURL: "https://dissertation-questionnai-74042.firebaseio.com",
-            projectId: "dissertation-questionnai-74042",
-            storageBucket: "dissertation-questionnai-74042.appspot.com",
-            messagingSenderId: "991390542938",
-            appId: "1:991390542938:web:8a74ddf23e54b2b3e7bc63",
-            measurementId: "G-YX1FG29CT9"
+            apiKey: "AIzaSyDGYxKp5jYYN25IWWexRI4H7lrcjgJ7rKw",
+            authDomain: "groupb-8cc7c.firebaseapp.com",
+            projectId: "groupb-8cc7c",
+            storageBucket: "groupb-8cc7c.appspot.com",
+            messagingSenderId: "148996579075",
+            appId: "1:148996579075:web:f34e8000366b9c102d5336",
+            measurementId: "G-KJEQ8D0T53"
           };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
@@ -292,7 +281,7 @@ function sendRate() {
         db.collection("rated").doc().set(selected)
     
             .then(function () {
-                window.location.href =("rank.html")
+                window.location.href =("postexperiment.html")
             })
             .catch(function (error) {
                 console.error("Error writing document: ", error);
@@ -312,95 +301,85 @@ function sendRate() {
 
 
 // Rank Website 
+
+// Rank Website 
 function startRank(){ 
     var practiceArray = new Array();
     practiceArray[0] = ["images/images/practice/practice1.jpg", "images/images/practice/practice2.jpg", "images/images/practice/practice4.jpg", "images/images/practice/practice7.jpg"]
     
     
     var imageArray = new Array();
-    imageArray[0] = ["images/images/icon1.jpg", "images/images/icon2.jpg", "images/images/icon39.jpg", "images/images/icon40.jpg"]
-    imageArray[1] = ["images/images/icon40.jpg", "images/images/icon39.jpg", "images/images/icon2.jpg", "images/images/icon1.jpg"]
-    imageArray[2] = ["images/images/icon3.jpg", "images/images/icon4.jpg", "images/images/icon38.jpg", "images/images/icon37.jpg"]
-    imageArray[3] = ["images/images/icon38.jpg", "images/images/icon37.jpg", "images/images/icon4.jpg", "images/images/icon3.jpg"]
-    imageArray[4] = ["images/images/icon5.jpg", "images/images/icon6.jpg", "images/images/icon35.jpg", "images/images/icon36.jpg"]
-    imageArray[5] = ["images/images/icon36.jpg", "images/images/icon35.jpg", "images/images/icon6.jpg", "images/images/icon5.jpg"]
-    imageArray[6] = ["images/images/icon7.jpg", "images/images/icon8.jpg", "images/images/icon34.jpg", "images/images/icon33.jpg"]
-    imageArray[7] = ["images/images/icon34.jpg", "images/images/icon33.jpg", "images/images/icon7.jpg", "images/images/icon8.jpg"]
-    imageArray[8] = ["images/images/icon9.jpg", "images/images/icon10.jpg", "images/images/icon32.jpg", "images/images/icon31.jpg"]
-    imageArray[9] = ["images/images/icon32.jpg", "images/images/icon31.jpg", "images/images/icon10.jpg", "images/images/icon9.jpg"]
-    imageArray[10] = ["images/images/icon11.jpg", "images/images/icon12.jpg", "images/images/icon30.jpg", "images/images/icon29.jpg"]
-    imageArray[11] = ["images/images/icon30.jpg", "images/images/icon29.jpg", "images/images/icon12.jpg", "images/images/icon11.jpg"]
-    imageArray[12] = ["images/images/icon13.jpg", "images/images/icon14.jpg", "images/images/icon28.jpg", "images/images/icon27.jpg"]
-    imageArray[13] = ["images/images/icon28.jpg", "images/images/icon27.jpg", "images/images/icon14.jpg", "images/images/icon13.jpg"]
-    imageArray[14] = ["images/images/icon15.jpg", "images/images/icon16.jpg", "images/images/icon25.jpg", "images/images/icon26.jpg"]
-    imageArray[15] = ["images/images/icon26.jpg", "images/images/icon25.jpg", "images/images/icon16.jpg", "images/images/icon15.jpg"]
-    imageArray[16] = ["images/images/icon17.jpg", "images/images/icon18.jpg", "images/images/icon24.jpg", "images/images/icon23.jpg"]
-    imageArray[17] = ["images/images/icon24.jpg", "images/images/icon23.jpg", "images/images/icon18.jpg", "images/images/icon17.jpg"]
-    imageArray[18] = ["images/images/icon19.jpg", "images/images/icon20.jpg", "images/images/icon22.jpg", "images/images/icon21.jpg"]
-    imageArray[19] = ["images/images/icon22.jpg", "images/images/icon21.jpg", "images/images/icon20.jpg", "images/images/icon19.jpg"]
+    var imageArray = ["images/images/icon1.jpg", "images/images/icon2.jpg", "images/images/icon3.jpg", "images/images/icon4.jpg", "images/images/icon5.jpg", "images/images/icon6.jpg", "images/images/icon7.jpg",
+    "images/images/icon8.jpg", "images/images/icon9.jpg", "images/images/icon10.jpg", "images/images/icon11.jpg","images/images/icon12.jpg", "images/images/icon13.jpg", 
+    "images/images/icon14.jpg", "images/images/icon15.jpg","images/images/icon16.jpg", "images/images/icon17.jpg", "images/images/icon18.jpg", "images/images/icon19.jpg",
+    "images/images/icon20.jpg", "images/images/icon21.jpg", "images/images/icon22.jpg", "images/images/icon23.jpg","images/images/icon24.jpg", "images/images/icon25.jpg", 
+    "images/images/icon26.jpg", "images/images/icon27.jpg", "images/images/icon28.jpg", "images/images/icon29.jpg", "images/images/icon30.jpg", "images/images/icon31.jpg", "images/images/icon32.jpg", "images/images/icon33.jpg", "images/images/icon34.jpg",
+    "images/images/icon35.jpg", "images/images/icon36.jpg", "images/images/icon37.jpg", "images/images/icon38.jpg", "images/images/icon39.jpg", "images/images/icon40.jpg"]
     
+    var imageArray2 = new Array();
+    var imageArray2 = ["images/images/icon1.jpg", "images/images/icon2.jpg", "images/images/icon3.jpg", "images/images/icon4.jpg", "images/images/icon5.jpg", "images/images/icon6.jpg", "images/images/icon7.jpg",
+    "images/images/icon8.jpg", "images/images/icon9.jpg", "images/images/icon10.jpg", "images/images/icon11.jpg","images/images/icon12.jpg", "images/images/icon13.jpg", 
+    "images/images/icon14.jpg", "images/images/icon15.jpg","images/images/icon16.jpg", "images/images/icon17.jpg", "images/images/icon18.jpg", "images/images/icon19.jpg",
+    "images/images/icon20.jpg", "images/images/icon21.jpg", "images/images/icon22.jpg", "images/images/icon23.jpg","images/images/icon24.jpg", "images/images/icon25.jpg", 
+    "images/images/icon26.jpg", "images/images/icon27.jpg", "images/images/icon28.jpg", "images/images/icon29.jpg", "images/images/icon30.jpg", "images/images/icon31.jpg", "images/images/icon32.jpg", "images/images/icon33.jpg", "images/images/icon34.jpg",
+    "images/images/icon35.jpg", "images/images/icon36.jpg", "images/images/icon37.jpg", "images/images/icon38.jpg", "images/images/icon39.jpg", "images/images/icon40.jpg"]
     
     
     var ranked = {}
     window.sessionStorage.setItem("ranked", JSON.stringify(ranked));
     window.sessionStorage.setItem("images", JSON.stringify(imageArray));
+    window.sessionStorage.setItem("images2", JSON.stringify(imageArray2));
     window.sessionStorage.setItem("practice", JSON.stringify(practiceArray));
     
     counter  = 0;
     window.sessionStorage.setItem("counter", counter);
+
+    count = 1;
+    document.getElementById("counter").innerHTML = "Trial " + count + " of 21 "
     
-    total = (JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practice")).length)
-    count = total - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practice")).length) - 1);
-    window.sessionStorage.setItem("total", total)
-    document.getElementById("counter").innerHTML = "Trial " + count + " of " + total
-    
-    }
+
+}
     
     // this returns the name of the picture eg image1
-    function serialize () {
+function serialize () {
       var serialized = []
       var img = document.querySelectorAll('[data-id]')
       img.forEach(image => {
       serialized.push(image.src.split('/').pop())
       })
       return serialized
-    }
+}
       
-    // this allows you to sort the images using drag and drop
-    var sorted = document.getElementById("rankedPicture")
-    Sortable.create(sorted, {
-    group: "rankedImages",
-    onEnd: function(e) {
-    console.log(serialize()) 
+// this allows you to sort the images using drag and drop
+var sorted = document.getElementById("rankedPicture")
+Sortable.create(sorted, {
+group: "rankedImages",
+onEnd: function(e) {
+console.log(serialize()) // how to get what is in this to the store answer
+},
+    
+store: {
+     // We keep the order of the list
+    set: (sorted) => {
+    var order = sorted.toArray ()
+     // console.log(order)
+    localStorage.setItem (sorted.options.group.name, order.join ('|'))
     },
     
-    store: {
-      // We keep the order of the list
-      set: (sorted) => {
-      var order = sorted.toArray ()
-     // console.log(order)
-      localStorage.setItem (sorted.options.group.name, order.join ('|'))
-      },
-    
       // We get the order of the list
-      get: (sorted) => {
-      var order = localStorage.getItem (sorted.options.group.name)
-      return order? order.split ('|'): []
-      }
-      }
-    })
+    get: (sorted) => {
+    var order = localStorage.getItem (sorted.options.group.name)
+    return order? order.split ('|'): []
+    }
+    }
+})
     
     
-// calls the sorted order and the images displayed
+    
 function storeRank(){
-
+    
     var serialized = serialize()
     var dict = JSON.parse(window.sessionStorage.getItem("ranked"))
-    
-    total = window.sessionStorage.getItem("total")
-    count = total - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practice")).length) - 1);
-    document.getElementById("counter").innerHTML = "Trial " + count + " of " + total;
-    
     
     var img1 = document.getElementById("drag1")
     var imgFile_1 = img1.src.slice(-10)
@@ -412,65 +391,84 @@ function storeRank(){
     var imgFile_4 = img4.src.slice(-10)
     
     
-    var displayed = [imgFile_4, imgFile_3 , imgFile_2 , imgFile_1]
+    var displayed = [imgFile_3 , imgFile_2 , imgFile_1, imgFile_4]
     
     
     dict[displayed] = serialized;
     console.log(dict)
     window.sessionStorage.setItem("ranked", JSON.stringify(dict));
     
+
     
     randomImageRank();
     
 }
     
     
-    
 function randomImageRank(){
-      var images = JSON.parse(window.sessionStorage.getItem("images"));
-      var practice = JSON.parse(window.sessionStorage.getItem("practice"));
-    
-      total = window.sessionStorage.getItem("total")
-      count = total - ((JSON.parse(window.sessionStorage.getItem("images")).length + JSON.parse(window.sessionStorage.getItem("practice")).length) - 1);
-      document.getElementById("counter").innerHTML = "Trial " + count + " of " + total;
-      counter = counter + 1
-     // var practice = JSON.parse(window.sessionStorage.getItem("practice"))
-    
-      var image1 = document.getElementById("drag1")
-      var image2 = document.getElementById("drag2")
-      var image3 = document.getElementById("drag3")
-      var image4 = document.getElementById("drag4")
-    
-      if (practice.length > 0 ){
-        image1.src = practice[0][0]
-        image2.src = practice[0][1]
-        image3.src = practice[0][2]
-        image4.src = practice[0][3]
-        practice.splice(0, 1)
-        window.sessionStorage.setItem("practice", JSON.stringify(practice))
-    } else {
-        if (counter % 12 == 0 ) {
-            image1.src = ("images/images/break_rank.png")
-            image2.src = ("images/images/break_rank.png")
-            image3.src = ("images/images/break_rank.png")
-            image4.src = ("images/images/break_rank.png")
-    } else {
+    var images = JSON.parse(window.sessionStorage.getItem("images"));
+    var images2 = JSON.parse(window.sessionStorage.getItem("images2"));
+    var practice = JSON.parse(window.sessionStorage.getItem("practice"));
+    counter += 1
+
+    var image1 = document.getElementById("drag1")
+    var image2 = document.getElementById("drag2")
+    var image3 = document.getElementById("drag3")
+    var image4 = document.getElementById("drag4")
+
+    document.getElementById("counter").innerHTML = "Trial " + count + " of 21";
+
+    sorted = images.sort(() => Math.random() - 0.5);
+    sortedSecond = images2.sort(() => Math.random() - 0.5);
+
+    var i = 0;
+    var j = 1;
+    var k = 2;
+    var l = 3;
+
+    if (practice.length > 0 ){
+      image1.src = practice[0][0]
+      image2.src = practice[0][1]
+      image3.src = practice[0][2]
+      image4.src = practice[0][3]
+      count = count + 1;
+      practice.splice(0, 1)
+      window.sessionStorage.setItem("practice", JSON.stringify(practice))
+  } else {
+      if (counter % 5 == 0 ) {
+          image1.src = ("images/images/break_rank1.png")
+          image2.src = ("images/images/break_rank2.png")
+          image3.src = ("images/images/break_rank3.png")
+          image4.src = ("images/images/break_rank4.png")
+  } else {
         if (images.length == 0) {
-            sendRank();
-        }
-         var rnd = Math.floor(Math.random() * images.length);
-         counter = counter + 1;
-         image1.src = images[rnd][0]
-         image2.src = images[rnd][1]
-         image3.src = images[rnd][2]
-         image4.src = images[rnd][3]
-         images.splice(rnd, 1);
-         window.sessionStorage.setItem("images", JSON.stringify(images))
+            if (images2.length == 0){
+                sendRank();
+            }
+            else {
+                image1.src = sortedSecond[i]
+                image2.src = sortedSecond[j]
+                image3.src = sortedSecond[k]
+                image4.src = sortedSecond[l]
+                count = count + 1;
+                sortedSecond.splice(0,4)
+            }
+        } else {
+            image1.src = sorted[i]
+            image2.src = sorted[j]
+            image3.src = sorted[k]
+            image4.src = sorted[l]
+            count = count + 1;
+        } 
+
+        sorted.splice(0, 4);
+
+       window.sessionStorage.setItem("images", JSON.stringify(images))
+       window.sessionStorage.setItem("images2", JSON.stringify(images2))
+
       }
     }
-}
-    
-    
+} 
     
 function sendRank(){
     
@@ -478,14 +476,13 @@ function sendRank(){
     
     
       var firebaseConfig = {
-        apiKey: "AIzaSyBbRvtLhaChvpbpdMqCjwQPkTtwFPXbtTM",
-        authDomain: "dissertation-questionnai-74042.firebaseapp.com",
-        databaseURL: "https://dissertation-questionnai-74042.firebaseio.com",
-        projectId: "dissertation-questionnai-74042",
-        storageBucket: "dissertation-questionnai-74042.appspot.com",
-        messagingSenderId: "991390542938",
-        appId: "1:991390542938:web:8a74ddf23e54b2b3e7bc63",
-        measurementId: "G-YX1FG29CT9"
+        apiKey: "AIzaSyDGYxKp5jYYN25IWWexRI4H7lrcjgJ7rKw",
+        authDomain: "groupb-8cc7c.firebaseapp.com",
+        projectId: "groupb-8cc7c",
+        storageBucket: "groupb-8cc7c.appspot.com",
+        messagingSenderId: "148996579075",
+        appId: "1:148996579075:web:f34e8000366b9c102d5336",
+        measurementId: "G-KJEQ8D0T53"
       };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
@@ -494,7 +491,7 @@ function sendRank(){
     
         .then(function () {
           console.log("Document successfully written!");
-          window.location.href =("postexperiment.html")
+          window.location.href =("rate.html")
         })
         .catch(function (error) {
             console.error("Error writing document: ", error);
@@ -502,7 +499,7 @@ function sendRank(){
 }
 
 
-// Submit feedback form
+
 function submit(){
 
     var age = document.getElementById("age").value
@@ -512,16 +509,15 @@ function submit(){
     var occupation = document.getElementById("occupation").value
     var comment = document.getElementById("comment").value
  
-   var firebaseConfig = {
-     apiKey: "AIzaSyBbRvtLhaChvpbpdMqCjwQPkTtwFPXbtTM",
-     authDomain: "dissertation-questionnai-74042.firebaseapp.com",
-     databaseURL: "https://dissertation-questionnai-74042.firebaseio.com",
-     projectId: "dissertation-questionnai-74042",
-     storageBucket: "dissertation-questionnai-74042.appspot.com",
-     messagingSenderId: "991390542938",
-     appId: "1:991390542938:web:8a74ddf23e54b2b3e7bc63",
-     measurementId: "G-YX1FG29CT9"
-   };
+    var firebaseConfig = {
+        apiKey: "AIzaSyDGYxKp5jYYN25IWWexRI4H7lrcjgJ7rKw",
+        authDomain: "groupb-8cc7c.firebaseapp.com",
+        projectId: "groupb-8cc7c",
+        storageBucket: "groupb-8cc7c.appspot.com",
+        messagingSenderId: "148996579075",
+        appId: "1:148996579075:web:f34e8000366b9c102d5336",
+        measurementId: "G-KJEQ8D0T53"
+    };
  
      // Initialize Firebase
      firebase.initializeApp(firebaseConfig);
@@ -543,6 +539,4 @@ function submit(){
          });
  
      
- }
-
- 
+}
